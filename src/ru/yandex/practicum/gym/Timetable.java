@@ -1,6 +1,5 @@
 package ru.yandex.practicum.gym;
 
-import java.awt.desktop.SystemEventListener;
 import java.util.*;
 
 public class Timetable {
