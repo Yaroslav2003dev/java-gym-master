@@ -51,8 +51,8 @@ public class Timetable {
 
             List<CounterOfTrainings> list = new ArrayList<>();
 
-        for(Map.Entry<Coach, Integer> entry: mapCoach.entrySet()) {
-            CounterOfTrainings counterOfTrainings=new CounterOfTrainings(entry.getKey(),entry.getValue());
+        for (Map.Entry<Coach, Integer> entry: mapCoach.entrySet()) {
+            CounterOfTrainings counterOfTrainings = new CounterOfTrainings(entry.getKey(),entry.getValue());
             list.add(counterOfTrainings);
         }
         Collections.sort(list);
