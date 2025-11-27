@@ -16,10 +16,10 @@ public class Timetable {
             dayMap = new TreeMap<>();
             timetable.put(day, dayMap);
         }
-        List<TrainingSession> trainingSessions=dayMap.get(time);
-        if(trainingSessions==null){
-            trainingSessions=new ArrayList<>();
-            dayMap.put(time,trainingSessions);
+        List<TrainingSession> trainingSessions = dayMap.get(time);
+        if (trainingSessions == null) {
+            trainingSessions = new ArrayList<>();
+            dayMap.put(time, trainingSessions);
         }
 
         trainingSessions.add(trainingSession);
@@ -45,7 +45,7 @@ public class Timetable {
         Map<Coach, Integer> mapCoach = new HashMap<>();
         for (TreeMap<TimeOfDay, List<TrainingSession>> value : timetable.values()) {
             for (List<TrainingSession> trainingSessions : value.values()) {
-                for (TrainingSession trainingSession: trainingSessions) {
+                for (TrainingSession trainingSession : trainingSessions) {
                     if (mapCoach.containsKey(trainingSession.getCoach())) {
                         mapCoach.put(trainingSession.getCoach(), mapCoach.get(trainingSession.getCoach()) + 1);
                     } else {
@@ -56,10 +56,10 @@ public class Timetable {
         }
 
 
-            List<CounterOfTrainings> list = new ArrayList<>();
+        List<CounterOfTrainings> list = new ArrayList<>();
 
-        for (Map.Entry<Coach, Integer> entry: mapCoach.entrySet()) {
-            CounterOfTrainings counterOfTrainings = new CounterOfTrainings(entry.getKey(),entry.getValue());
+        for (Map.Entry<Coach, Integer> entry : mapCoach.entrySet()) {
+            CounterOfTrainings counterOfTrainings = new CounterOfTrainings(entry.getKey(), entry.getValue());
             list.add(counterOfTrainings);
         }
         Collections.sort(list);
