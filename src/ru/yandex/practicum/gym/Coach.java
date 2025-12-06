@@ -34,6 +34,15 @@ public class Coach {
         return surname;
     }
 
+    @Override
+    public String toString() {
+        return "Coach{" +
+                "surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", middleName='" + middleName + '\'' +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
